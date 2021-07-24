@@ -353,6 +353,9 @@ body {
   font-family: "Montserrat", sans-serif;
   font-size: 1.6rem;
 }
+body.fijar-body {
+  overflow: hidden;
+}
 
 p {
   font-size: 2rem;
@@ -361,7 +364,7 @@ p {
 
 .contenedor {
   max-width: 120rem;
-  width: 95%;
+  width: 90%;
   margin: 0 auto;
 }
 
@@ -389,6 +392,14 @@ h2 {
 
 h3 {
   font-size: 2.8rem;
+}
+
+.bg-verde {
+  background-color: #4cb8b3;
+}
+
+.bg-amarillo {
+  background-color: #fef46d;
 }
 
 .header {
@@ -431,4 +442,196 @@ h3 {
   .navegacion-principal {
     grid-template-columns: 1fr 1fr 1fr;
   }
+}
+
+.video {
+  position: relative;
+  max-height: 35rem;
+  overflow: hidden;
+}
+.video .overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #f53756 50%, #fef46d);
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#891c1e+0,9e37f2+72,ffffff+100&0.8+0,0.5+100 */
+  background: -moz-linear-gradient(-45deg, rgba(137, 28, 30, 0.8) 0%, rgba(158, 55, 242, 0.58) 72%, rgba(255, 255, 255, 0.5) 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(-45deg, rgba(137, 28, 30, 0.8) 0%, rgba(158, 55, 242, 0.58) 72%, rgba(255, 255, 255, 0.5) 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(135deg, rgba(137, 28, 30, 0.8) 0%, rgba(158, 55, 242, 0.58) 72%, rgba(255, 255, 255, 0.5) 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#cc891c1e", endColorstr="#80ffffff",GradientType=1 );
+  /* IE6-9 fallback on horizontal gradient */
+}
+.video video {
+  display: block;
+  width: 100%;
+}
+
+.contenido-video {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+.contenido-video h2 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: #ffffff;
+  font-size: 7rem;
+}
+.contenido-video h2 span {
+  background-color: #f53756;
+  font-size: 2rem;
+  padding: 1rem 2rem 1rem 2rem;
+}
+
+.sobre-festival {
+  padding: 5rem;
+}
+@media (min-width: 768px) {
+  .sobre-festival {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5rem;
+  }
+}
+
+.contenido-festival {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.contenido-festival h2 {
+  font-size: 3rem;
+}
+.contenido-festival .fecha {
+  color: #f53756;
+  font-weight: 700;
+}
+.contenido-festival .texto {
+  line-height: 1.5;
+}
+
+.lineup {
+  background-color: #f53756;
+  padding: 5rem 0;
+}
+.lineup h3,
+.lineup p {
+  text-align: center;
+  color: #ffffff;
+}
+.lineup .dia {
+  text-transform: uppercase;
+  margin: 5rem 0;
+}
+
+@media (min-width: 768px) {
+  .escenarios-contenedor {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5rem;
+  }
+}
+.escenarios-contenedor .escenario {
+  padding-top: 2.5rem;
+}
+.escenarios-contenedor .nombre-escenario {
+  color: #000000;
+  font-size: 2rem;
+  font-weight: 300;
+}
+.escenarios-contenedor .nombre-escenario:after {
+  content: "";
+  width: 20rem;
+  height: 10rem;
+  display: block;
+  margin: 2rem auto 0 auto;
+  background-size: 15rem;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.edm .nombre-escenario:after {
+  background-image: url(/build/img/icono_edm.png);
+}
+
+.rock .nombre-escenario:after {
+  background-image: url(/build/img/icono_rock.png);
+}
+
+.calendario {
+  padding: 0;
+  list-style: none;
+}
+.calendario li {
+  padding: 2.5rem;
+  font-weight: 700;
+}
+.calendario li span {
+  font-weight: 400;
+}
+
+.bg-verde .calendario li:nth-child(odd) {
+  background-color: #3b9691;
+}
+
+.bg-amarillo .calendario li:nth-child(odd) {
+  background-color: #fef03a;
+}
+
+.galeria {
+  padding: 5rem 0;
+}
+.galeria h3 {
+  text-align: center;
+}
+
+.galeria-imagenes {
+  padding: 0;
+  list-style: none;
+  margin-top: 5rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 5rem;
+}
+@media (min-width: 768px) {
+  .galeria-imagenes {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2.5rem;
+  }
+}
+@media (min-width: 1100px) {
+  .galeria-imagenes {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 2.5rem;
+  }
+}
+
+.overlay {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 50%;
+  height: 50%;
+  top: 0;
+  display: grid;
+  place-items: center;
+}
+
+.btn-cerrar {
+  width: 5rem;
+  height: 5rem;
+  background-color: #ffffff;
+  display: grid;
+  place-items: center;
+  font-weight: 900;
+  font-size: 3rem;
+  border-radius: 50%;
+}
+.btn-cerrar:hover {
+  cursor: pointer;
 }

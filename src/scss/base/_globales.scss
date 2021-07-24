@@ -12,6 +12,10 @@ html {
 body {
   font-family: $fuentePrincipal;
   font-size: 1.6rem;
+
+  &.fijar-body {
+    overflow: hidden;
+  }
 }
 
 p {
@@ -21,7 +25,7 @@ p {
 
 .contenedor {
   max-width: 120rem;
-  width: 95%;
+  width: 90%;
   margin: 0 auto;
 }
 
